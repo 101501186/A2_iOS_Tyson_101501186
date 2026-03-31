@@ -9,13 +9,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="A2_iOS_Tyson_101501186" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAo-9x-RB0">
+                                <rect key="frame" x="99" y="88" width="177" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product ID: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YM-7j-CaT">
+                                <rect key="frame" x="24" y="157" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcO-qX-0rM">
+                                <rect key="frame" x="24" y="201" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV7-Ak-Ih5">
+                                <rect key="frame" x="24" y="245" width="327" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziq-Tt-8m3">
+                                <rect key="frame" x="24" y="313" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc1-g7-PsQ">
+                                <rect key="frame" x="24" y="357" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LAo-9x-RB0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="3Le-Q2-qtg"/>
+                            <constraint firstItem="4YM-7j-CaT" firstAttribute="top" secondItem="LAo-9x-RB0" secondAttribute="bottom" constant="40" id="4gi-v5-dRK"/>
+                            <constraint firstItem="Nc1-g7-PsQ" firstAttribute="leading" secondItem="ziq-Tt-8m3" secondAttribute="leading" id="6oE-nm-bbP"/>
+                            <constraint firstItem="nV7-Ak-Ih5" firstAttribute="leading" secondItem="ZcO-qX-0rM" secondAttribute="leading" id="BhG-R8-GcK"/>
+                            <constraint firstItem="Nc1-g7-PsQ" firstAttribute="top" secondItem="ziq-Tt-8m3" secondAttribute="bottom" constant="20" id="FA0-y2-I2S"/>
+                            <constraint firstItem="LAo-9x-RB0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jn8-Tt-DAV"/>
+                            <constraint firstItem="ZcO-qX-0rM" firstAttribute="top" secondItem="4YM-7j-CaT" secondAttribute="bottom" constant="20" id="O0W-Lc-9Co"/>
+                            <constraint firstItem="4YM-7j-CaT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="P44-S0-x4X"/>
+                            <constraint firstItem="ziq-Tt-8m3" firstAttribute="top" secondItem="nV7-Ak-Ih5" secondAttribute="bottom" constant="20" id="Sg1-TH-Dm7"/>
+                            <constraint firstItem="nV7-Ak-Ih5" firstAttribute="top" secondItem="ZcO-qX-0rM" secondAttribute="bottom" constant="20" id="X0D-W7-E2c"/>
+                            <constraint firstItem="ziq-Tt-8m3" firstAttribute="leading" secondItem="nV7-Ak-Ih5" secondAttribute="leading" id="bO3-2d-hHA"/>
+                            <constraint firstItem="4YM-7j-CaT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-24" id="f3P-bY-7Rw"/>
+                            <constraint firstItem="ZcO-qX-0rM" firstAttribute="leading" secondItem="4YM-7j-CaT" secondAttribute="leading" id="hyf-52-6Zo"/>
+                            <constraint firstItem="nV7-Ak-Ih5" firstAttribute="trailing" secondItem="4YM-7j-CaT" secondAttribute="trailing" id="mnE-C0-HkT"/>
+                            <constraint firstItem="ziq-Tt-8m3" firstAttribute="trailing" secondItem="nV7-Ak-Ih5" secondAttribute="trailing" id="qP2-Nd-MmT"/>
+                            <constraint firstItem="Nc1-g7-PsQ" firstAttribute="trailing" secondItem="ziq-Tt-8m3" secondAttribute="trailing" id="v2t-By-jpJ"/>
+                            <constraint firstItem="ZcO-qX-0rM" firstAttribute="trailing" secondItem="4YM-7j-CaT" secondAttribute="trailing" id="yit-9n-hsq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IxV-GC-8Jg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
