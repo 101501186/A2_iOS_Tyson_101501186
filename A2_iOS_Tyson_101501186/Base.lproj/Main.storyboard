@@ -10,6 +10,13 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="A2_iOS_Tyson_101501186" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <outlet property="descriptionLabel" destination="nV7-Ak-Ih5" id="WqX-Nn-W25"/>
+                        <outlet property="nameLabel" destination="ZcO-qX-0rM" id="0Wt-ru-PX0"/>
+                        <outlet property="priceLabel" destination="ziq-Tt-8m3" id="LuS-cj-Slo"/>
+                        <outlet property="productIDLabel" destination="4YM-7j-CaT" id="PS1-8s-l0k"/>
+                        <outlet property="providerLabel" destination="Nc1-g7-PsQ" id="JqI-U7-iY8"/>
+                    </connections>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
