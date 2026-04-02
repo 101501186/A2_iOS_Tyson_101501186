@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var providerLabel: UILabel!
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
         if let firstProduct = products.first {
             displayProduct(firstProduct)
         }
+
+        updateNavigationButtons()
     }
 
     func displayProduct(_ product: Product) {
@@ -28,6 +32,12 @@ class ViewController: UIViewController {
         descriptionLabel.text = "Description: \(product.productDescription ?? "")"
         priceLabel.text = String(format: "Price: $%.2f", product.price)
         providerLabel.text = "Provider: \(product.provider ?? "")"
+        updateNavigationButtons()
+    }
+
+    func updateNavigationButtons() {
+        previousButton.isEnabled = currentIndex > 0
+        nextButton.isEnabled = currentIndex < products.count - 1
     }
 
     @IBAction func nextProductTapped(_ sender: UIButton) {
