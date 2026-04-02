@@ -62,11 +62,25 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
     }
 
+    func showProduct(_ selectedProduct: Product) {
+        products = repository.fetchAllProducts()
+
+        if let selectedIndex = products.firstIndex(where: { $0.productID == selectedProduct.productID }) {
+            currentIndex = selectedIndex
+            displayProduct(products[currentIndex])
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowAddProduct",
            let addProductViewController = segue.destination as? AddProductViewController {
             addProductViewController.onProductSaved = { [weak self] in
                 self?.reloadProducts(showLastProduct: true)
+            }
+        } else if segue.identifier == "ShowProductList",
+                  let productListViewController = segue.destination as? ProductListViewController {
+            productListViewController.onProductSelected = { [weak self] product in
+                self?.showProduct(product)
             }
         }
     }

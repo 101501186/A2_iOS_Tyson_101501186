@@ -4,6 +4,7 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
 
     let repository = ProductRepository()
     var products: [Product] = []
+    var onProductSelected: ((Product) -> Void)?
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -30,5 +31,15 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
         cell.textLabel?.text = product.name
         cell.detailTextLabel?.text = product.productDescription
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let product = products[indexPath.row]
+        onProductSelected?(product)
+        dismiss(animated: true)
+    }
+
+    @IBAction func doneTapped(_ sender: UIButton) {
+        dismiss(animated: true)
     }
 }
