@@ -7,11 +7,13 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
     var onProductSelected: ((Product) -> Void)?
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var doneButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        styleScreen()
         products = repository.fetchAllProducts()
     }
 
@@ -28,8 +30,20 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
         let product = products[indexPath.row]
-        cell.textLabel?.text = product.name
-        cell.detailTextLabel?.text = product.productDescription
+        var content = cell.defaultContentConfiguration()
+        content.text = product.name
+        content.secondaryText = product.productDescription
+        content.image = UIImage(systemName: iconName(for: product))
+        content.imageProperties.tintColor = UIColor(red: 28 / 255, green: 74 / 255, blue: 132 / 255, alpha: 1.0)
+        content.imageProperties.maximumSize = CGSize(width: 42, height: 42)
+        content.textProperties.font = UIFont.boldSystemFont(ofSize: 18)
+        content.secondaryTextProperties.color = UIColor.darkGray
+        content.secondaryTextProperties.numberOfLines = 2
+        cell.contentConfiguration = content
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 16
+        cell.layer.masksToBounds = true
+        cell.selectionStyle = .default
         return cell
     }
 
@@ -41,5 +55,42 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
 
     @IBAction func doneTapped(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+
+    func styleScreen() {
+        view.backgroundColor = UIColor(red: 219 / 255, green: 228 / 255, blue: 216 / 255, alpha: 1.0)
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 92
+        doneButton.backgroundColor = UIColor(red: 32 / 255, green: 86 / 255, blue: 154 / 255, alpha: 1.0)
+        doneButton.setTitleColor(.white, for: .normal)
+        doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        doneButton.layer.cornerRadius = 14
+        doneButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 18, bottom: 10, right: 18)
+    }
+
+    func iconName(for product: Product) -> String {
+        let nameText = (product.name ?? "").lowercased()
+        let providerText = (product.provider ?? "").lowercased()
+
+        if nameText.contains("iphone") || nameText.contains("galaxy") {
+            return "iphone"
+        }
+        if nameText.contains("watch") {
+            return "applewatch"
+        }
+        if nameText.contains("airpods") || nameText.contains("headphone") || nameText.contains("sony") {
+            return "headphones"
+        }
+        if nameText.contains("ipad") || nameText.contains("kindle") {
+            return "ipad"
+        }
+        if nameText.contains("macbook") || nameText.contains("laptop") || providerText.contains("microsoft") {
+            return "laptopcomputer"
+        }
+        if nameText.contains("gopro") || nameText.contains("camera") {
+            return "camera"
+        }
+        return "shippingbox.fill"
     }
 }

@@ -11,6 +11,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="A2_iOS_Tyson_101501186" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
+                        <outlet property="addProductButton" destination="6pi-D4-1Jv" id="16w-Wn-NnV"/>
                         <outlet property="descriptionLabel" destination="nV7-Ak-Ih5" id="WqX-Nn-W25"/>
                         <outlet property="nameLabel" destination="ZcO-qX-0rM" id="0Wt-ru-PX0"/>
                         <outlet property="nextButton" destination="wF1-tI-xd7" id="VCB-vh-ifw"/>
@@ -19,6 +20,7 @@
                         <outlet property="productIDLabel" destination="4YM-7j-CaT" id="PS1-8s-l0k"/>
                         <outlet property="providerLabel" destination="Nc1-g7-PsQ" id="JqI-U7-iY8"/>
                         <outlet property="searchBar" destination="M4u-8b-2oJ" id="Q0E-Ti-ePn"/>
+                        <outlet property="viewAllButton" destination="hfV-AT-vQq" id="Xyf-hk-Wcu"/>
                     </connections>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -65,29 +67,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF1-tI-xd7">
-                                <rect key="frame" x="140.5" y="457" width="94.5" height="34"/>
-                                <state key="normal" title="Next Product"/>
+                                <rect key="frame" x="199" y="445" width="148" height="44"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextProductTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3YR-LB-PRi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGS-zX-Rui">
-                                <rect key="frame" x="28" y="457" width="121.5" height="34"/>
-                                <state key="normal" title="Previous Product"/>
+                                <rect key="frame" x="28" y="445" width="148" height="44"/>
+                                <state key="normal" title="Previous"/>
                                 <connections>
                                     <action selector="previousProductTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc0-DI-Bz0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pi-D4-1Jv">
-                                <rect key="frame" x="251" y="457" width="96" height="34"/>
-                                <state key="normal" title="Add Product"/>
+                                <rect key="frame" x="28" y="501" width="148" height="44"/>
+                                <state key="normal" title="Add Item"/>
                                 <connections>
                                     <segue destination="s2x-aB-2VD" kind="presentation" identifier="ShowAddProduct" id="Y6e-qf-Ub1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfV-AT-vQq">
-                                <rect key="frame" x="146.5" y="511" width="82.5" height="34"/>
-                                <state key="normal" title="View All"/>
+                                <rect key="frame" x="199" y="501" width="148" height="44"/>
+                                <state key="normal" title="Catalog"/>
                                 <connections>
                                     <segue destination="IrF-Mx-HdM" kind="presentation" identifier="ShowProductList" id="pRa-Go-Ihp"/>
                                 </connections>
@@ -108,21 +110,21 @@
                             <constraint firstItem="ziq-Tt-8m3" firstAttribute="top" secondItem="nV7-Ak-Ih5" secondAttribute="bottom" constant="20" id="Sg1-TH-Dm7"/>
                             <constraint firstItem="nV7-Ak-Ih5" firstAttribute="top" secondItem="ZcO-qX-0rM" secondAttribute="bottom" constant="20" id="X0D-W7-E2c"/>
                             <constraint firstItem="ziq-Tt-8m3" firstAttribute="leading" secondItem="nV7-Ak-Ih5" secondAttribute="leading" id="bO3-2d-hHA"/>
-                            <constraint firstItem="wF1-tI-xd7" firstAttribute="top" secondItem="Nc1-g7-PsQ" secondAttribute="bottom" constant="44" id="bP3-tJ-ZKo"/>
+                            <constraint firstItem="wF1-tI-xd7" firstAttribute="top" secondItem="Nc1-g7-PsQ" secondAttribute="bottom" constant="32" id="bP3-tJ-ZKo"/>
                             <constraint firstItem="vGS-zX-Rui" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="e0n-CQ-rdc"/>
                             <constraint firstItem="4YM-7j-CaT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-24" id="f3P-bY-7Rw"/>
                             <constraint firstItem="ZcO-qX-0rM" firstAttribute="leading" secondItem="4YM-7j-CaT" secondAttribute="leading" id="hyf-52-6Zo"/>
                             <constraint firstItem="nV7-Ak-Ih5" firstAttribute="trailing" secondItem="4YM-7j-CaT" secondAttribute="trailing" id="mnE-C0-HkT"/>
                             <constraint firstItem="M4u-8b-2oJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="odY-Oz-Mga"/>
                             <constraint firstItem="ziq-Tt-8m3" firstAttribute="trailing" secondItem="nV7-Ak-Ih5" secondAttribute="trailing" id="qP2-Nd-MmT"/>
-                            <constraint firstItem="wF1-tI-xd7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rEg-p8-4vZ"/>
                             <constraint firstItem="vGS-zX-Rui" firstAttribute="centerY" secondItem="wF1-tI-xd7" secondAttribute="centerY" id="rPh-fR-oIq"/>
-                            <constraint firstItem="6pi-D4-1Jv" firstAttribute="centerY" secondItem="wF1-tI-xd7" secondAttribute="centerY" id="sGB-dC-5Ii"/>
-                            <constraint firstItem="hfV-AT-vQq" firstAttribute="top" secondItem="wF1-tI-xd7" secondAttribute="bottom" constant="20" id="tNc-LP-I4F"/>
-                            <constraint firstItem="6pi-D4-1Jv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-28" id="v3M-NB-V7V"/>
+                            <constraint firstItem="wF1-tI-xd7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-28" id="rEg-p8-4vZ"/>
+                            <constraint firstItem="6pi-D4-1Jv" firstAttribute="top" secondItem="wF1-tI-xd7" secondAttribute="bottom" constant="12" id="sGB-dC-5Ii"/>
+                            <constraint firstItem="hfV-AT-vQq" firstAttribute="top" secondItem="wF1-tI-xd7" secondAttribute="bottom" constant="12" id="tNc-LP-I4F"/>
+                            <constraint firstItem="6pi-D4-1Jv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="v3M-NB-V7V"/>
                             <constraint firstItem="Nc1-g7-PsQ" firstAttribute="trailing" secondItem="ziq-Tt-8m3" secondAttribute="trailing" id="v2t-By-jpJ"/>
                             <constraint firstItem="ZcO-qX-0rM" firstAttribute="trailing" secondItem="4YM-7j-CaT" secondAttribute="trailing" id="yit-9n-hsq"/>
-                            <constraint firstItem="hfV-AT-vQq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zNO-OQ-32W"/>
+                            <constraint firstItem="hfV-AT-vQq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-28" id="zNO-OQ-32W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -136,10 +138,12 @@
             <objects>
                 <viewController id="s2x-aB-2VD" customClass="AddProductViewController" customModule="A2_iOS_Tyson_101501186" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
+                        <outlet property="cancelButton" destination="K2u-S7-7UM" id="5Ch-jS-I4n"/>
                         <outlet property="descriptionTextField" destination="XAj-tV-y8a" id="fOl-H4-qhK"/>
                         <outlet property="nameTextField" destination="v3e-KG-J0y" id="wLj-Rx-KL0"/>
                         <outlet property="priceTextField" destination="x9L-RR-s6Y" id="x6I-3P-gPe"/>
                         <outlet property="providerTextField" destination="fPd-LH-TJk" id="2Tl-2x-fVa"/>
+                        <outlet property="saveButton" destination="nUs-74-0ME" id="N60-vm-yFr"/>
                     </connections>
                     <view key="view" contentMode="scaleToFill" id="l9f-16-Fh2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -209,7 +213,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ElM-pw-Jsh"/>
                     </view>
-                    <modalPresentationStyle key="modalPresentationStyle"/>
+                    <modalPresentationStyle key="modalPresentationStyle" fullScreen="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNa-YK-eEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,6 +223,7 @@
             <objects>
                 <viewController id="IrF-Mx-HdM" customClass="ProductListViewController" customModule="A2_iOS_Tyson_101501186" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
+                        <outlet property="doneButton" destination="mPd-yy-A2C" id="VXA-NP-gic"/>
                         <outlet property="tableView" destination="nJY-3v-Vil" id="uA7-O3-WPe"/>
                     </connections>
                     <view key="view" contentMode="scaleToFill" id="rtr-cJ-mho">
@@ -231,12 +236,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nJY-3v-Vil">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nJY-3v-Vil">
                                 <rect key="frame" x="0.0" y="137" width="375" height="530"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" style="subtitle" id="Ceq-Y7-MqS">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -261,7 +266,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mni-HN-Km1"/>
                     </view>
-                    <modalPresentationStyle key="modalPresentationStyle"/>
+                    <modalPresentationStyle key="modalPresentationStyle" fullScreen="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6q-p9-NM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
