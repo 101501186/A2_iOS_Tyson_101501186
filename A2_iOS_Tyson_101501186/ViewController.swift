@@ -19,13 +19,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         searchBar.delegate = self
         repository.seedProductsIfNeeded()
-        products = repository.fetchAllProducts()
-
-        if let firstProduct = products.first {
-            displayProduct(firstProduct)
-        }
-
-        updateNavigationButtons()
+        reloadProducts(showLastProduct: false)
     }
 
     func displayProduct(_ product: Product) {
@@ -42,6 +36,18 @@ class ViewController: UIViewController, UISearchBarDelegate {
         nextButton.isEnabled = currentIndex < products.count - 1
     }
 
+    func reloadProducts(showLastProduct: Bool) {
+        products = repository.fetchAllProducts()
+
+        guard !products.isEmpty else {
+            updateNavigationButtons()
+            return
+        }
+
+        currentIndex = showLastProduct ? products.count - 1 : 0
+        displayProduct(products[currentIndex])
+    }
+
     @IBAction func nextProductTapped(_ sender: UIButton) {
         if currentIndex < products.count - 1 {
             currentIndex += 1
@@ -53,6 +59,15 @@ class ViewController: UIViewController, UISearchBarDelegate {
         if currentIndex > 0 {
             currentIndex -= 1
             displayProduct(products[currentIndex])
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowAddProduct",
+           let addProductViewController = segue.destination as? AddProductViewController {
+            addProductViewController.onProductSaved = { [weak self] in
+                self?.reloadProducts(showLastProduct: true)
+            }
         }
     }
 

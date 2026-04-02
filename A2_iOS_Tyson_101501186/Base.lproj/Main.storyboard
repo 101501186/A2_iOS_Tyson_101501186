@@ -126,6 +126,12 @@
         <scene sceneID="Orw-Nb-1Wv">
             <objects>
                 <viewController id="s2x-aB-2VD" customClass="AddProductViewController" customModule="A2_iOS_Tyson_101501186" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <outlet property="descriptionTextField" destination="XAj-tV-y8a" id="fOl-H4-qhK"/>
+                        <outlet property="nameTextField" destination="v3e-KG-J0y" id="wLj-Rx-KL0"/>
+                        <outlet property="priceTextField" destination="x9L-RR-s6Y" id="x6I-3P-gPe"/>
+                        <outlet property="providerTextField" destination="fPd-LH-TJk" id="2Tl-2x-fVa"/>
+                    </connections>
                     <view key="view" contentMode="scaleToFill" id="l9f-16-Fh2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,62 +142,61 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1J-eg-6P8">
-                                <rect key="frame" x="24" y="149" width="327" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v3e-KG-J0y">
-                                <rect key="frame" x="24" y="203" width="327" height="34"/>
+                                <rect key="frame" x="24" y="149" width="327" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAj-tV-y8a">
-                                <rect key="frame" x="24" y="257" width="327" height="34"/>
+                                <rect key="frame" x="24" y="203" width="327" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9L-RR-s6Y">
-                                <rect key="frame" x="24" y="311" width="327" height="34"/>
+                                <rect key="frame" x="24" y="257" width="327" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Provider" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPd-LH-TJk">
-                                <rect key="frame" x="24" y="365" width="327" height="34"/>
+                                <rect key="frame" x="24" y="311" width="327" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-S7-7UM">
-                                <rect key="frame" x="63" y="439" width="94" height="34"/>
+                                <rect key="frame" x="63" y="385" width="94" height="34"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="s2x-aB-2VD" eventType="touchUpInside" id="B30-uL-kjN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUs-74-0ME">
-                                <rect key="frame" x="225" y="439" width="87" height="34"/>
+                                <rect key="frame" x="225" y="385" width="87" height="34"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="s2x-aB-2VD" eventType="touchUpInside" id="b2l-Xd-U1q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="My9-Ue-aYh" firstAttribute="top" secondItem="ElM-pw-Jsh" secondAttribute="top" constant="44" id="1vG-f9-YVm"/>
-                            <constraint firstItem="g1J-eg-6P8" firstAttribute="top" secondItem="My9-Ue-aYh" secondAttribute="bottom" constant="32" id="2u2-fA-Vg8"/>
                             <constraint firstItem="x9L-RR-s6Y" firstAttribute="top" secondItem="XAj-tV-y8a" secondAttribute="bottom" constant="20" id="6mH-Bf-cY1"/>
                             <constraint firstItem="fPd-LH-TJk" firstAttribute="top" secondItem="x9L-RR-s6Y" secondAttribute="bottom" constant="20" id="A5B-pq-Knn"/>
                             <constraint firstItem="nUs-74-0ME" firstAttribute="top" secondItem="fPd-LH-TJk" secondAttribute="bottom" constant="40" id="Ad2-mr-igd"/>
                             <constraint firstItem="K2u-S7-7UM" firstAttribute="centerY" secondItem="nUs-74-0ME" secondAttribute="centerY" id="CUX-cv-5c6"/>
                             <constraint firstItem="My9-Ue-aYh" firstAttribute="centerX" secondItem="l9f-16-Fh2" secondAttribute="centerX" id="FpP-8k-oA2"/>
-                            <constraint firstItem="g1J-eg-6P8" firstAttribute="leading" secondItem="ElM-pw-Jsh" secondAttribute="leading" constant="24" id="H7u-V2-RQ9"/>
-                            <constraint firstItem="v3e-KG-J0y" firstAttribute="leading" secondItem="g1J-eg-6P8" secondAttribute="leading" id="LTv-YY-pVv"/>
-                            <constraint firstItem="XAj-tV-y8a" firstAttribute="trailing" secondItem="g1J-eg-6P8" secondAttribute="trailing" id="Op0-B5-shR"/>
+                            <constraint firstItem="v3e-KG-J0y" firstAttribute="leading" secondItem="ElM-pw-Jsh" secondAttribute="leading" constant="24" id="LTv-YY-pVv"/>
+                            <constraint firstItem="XAj-tV-y8a" firstAttribute="trailing" secondItem="v3e-KG-J0y" secondAttribute="trailing" id="Op0-B5-shR"/>
                             <constraint firstItem="XAj-tV-y8a" firstAttribute="top" secondItem="v3e-KG-J0y" secondAttribute="bottom" constant="20" id="Q8Q-Xi-dT0"/>
-                            <constraint firstItem="v3e-KG-J0y" firstAttribute="top" secondItem="g1J-eg-6P8" secondAttribute="bottom" constant="20" id="QiA-3H-a6q"/>
+                            <constraint firstItem="v3e-KG-J0y" firstAttribute="top" secondItem="My9-Ue-aYh" secondAttribute="bottom" constant="32" id="QiA-3H-a6q"/>
                             <constraint firstItem="fPd-LH-TJk" firstAttribute="leading" secondItem="x9L-RR-s6Y" secondAttribute="leading" id="T29-t6-0eu"/>
                             <constraint firstItem="x9L-RR-s6Y" firstAttribute="leading" secondItem="XAj-tV-y8a" secondAttribute="leading" id="V3d-9W-IOP"/>
-                            <constraint firstItem="g1J-eg-6P8" firstAttribute="trailing" secondItem="ElM-pw-Jsh" secondAttribute="trailing" constant="-24" id="ZgP-u2-YjI"/>
+                            <constraint firstItem="v3e-KG-J0y" firstAttribute="trailing" secondItem="ElM-pw-Jsh" secondAttribute="trailing" constant="-24" id="ZgP-u2-YjI"/>
                             <constraint firstItem="x9L-RR-s6Y" firstAttribute="trailing" secondItem="XAj-tV-y8a" secondAttribute="trailing" id="dYk-SI-e98"/>
                             <constraint firstItem="nUs-74-0ME" firstAttribute="trailing" secondItem="ElM-pw-Jsh" secondAttribute="trailing" constant="-63" id="inN-3J-tA5"/>
                             <constraint firstItem="fPd-LH-TJk" firstAttribute="trailing" secondItem="x9L-RR-s6Y" secondAttribute="trailing" id="oEr-hG-mP4"/>
                             <constraint firstItem="K2u-S7-7UM" firstAttribute="leading" secondItem="ElM-pw-Jsh" secondAttribute="leading" constant="63" id="rhe-cS-GdY"/>
-                            <constraint firstItem="v3e-KG-J0y" firstAttribute="trailing" secondItem="g1J-eg-6P8" secondAttribute="trailing" id="x4W-kW-eh3"/>
+                            <constraint firstItem="v3e-KG-J0y" firstAttribute="trailing" secondItem="ElM-pw-Jsh" secondAttribute="trailing" constant="-24" id="x4W-kW-eh3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ElM-pw-Jsh"/>
                     </view>

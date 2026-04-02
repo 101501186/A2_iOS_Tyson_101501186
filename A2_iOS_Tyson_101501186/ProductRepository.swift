@@ -43,6 +43,10 @@ class ProductRepository {
         }
     }
 
+    func nextProductID() -> Int64 {
+        return (fetchAllProducts().last?.productID ?? 0) + 1
+    }
+
     func addProduct(productID: Int64, name: String, productDescription: String, price: Double, provider: String) {
         let product = Product(context: context)
         product.productID = productID
@@ -52,6 +56,16 @@ class ProductRepository {
         product.provider = provider
 
         save()
+    }
+
+    func addProduct(name: String, productDescription: String, price: Double, provider: String) {
+        addProduct(
+            productID: nextProductID(),
+            name: name,
+            productDescription: productDescription,
+            price: price,
+            provider: provider
+        )
     }
 
     func seedProductsIfNeeded() {
