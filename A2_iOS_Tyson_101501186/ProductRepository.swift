@@ -29,7 +29,11 @@ class ProductRepository {
     func searchProducts(byName searchText: String) -> [Product] {
         let request: NSFetchRequest<Product> = Product.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "productID", ascending: true)]
-        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchText)
+        request.predicate = NSPredicate(
+            format: "name CONTAINS[cd] %@ OR productDescription CONTAINS[cd] %@",
+            searchText,
+            searchText
+        )
 
         do {
             return try context.fetch(request)
