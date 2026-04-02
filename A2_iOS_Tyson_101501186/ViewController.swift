@@ -36,4 +36,11 @@ class ViewController: UIViewController {
             displayProduct(products[currentIndex])
         }
     }
+
+    @IBAction func previousProductTapped(_ sender: UIButton) {
+        if currentIndex > 0 {
+            currentIndex -= 1
+            displayProduct(products[currentIndex])
+        }
+    }
 }

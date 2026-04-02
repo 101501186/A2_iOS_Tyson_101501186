@@ -64,6 +64,13 @@
                                     <action selector="nextProductTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3YR-LB-PRi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGS-zX-Rui">
+                                <rect key="frame" x="28" y="425" width="121.5" height="34"/>
+                                <state key="normal" title="Previous Product"/>
+                                <connections>
+                                    <action selector="previousProductTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc0-DI-Bz0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -79,11 +86,13 @@
                             <constraint firstItem="nV7-Ak-Ih5" firstAttribute="top" secondItem="ZcO-qX-0rM" secondAttribute="bottom" constant="20" id="X0D-W7-E2c"/>
                             <constraint firstItem="ziq-Tt-8m3" firstAttribute="leading" secondItem="nV7-Ak-Ih5" secondAttribute="leading" id="bO3-2d-hHA"/>
                             <constraint firstItem="wF1-tI-xd7" firstAttribute="top" secondItem="Nc1-g7-PsQ" secondAttribute="bottom" constant="44" id="bP3-tJ-ZKo"/>
+                            <constraint firstItem="vGS-zX-Rui" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="e0n-CQ-rdc"/>
                             <constraint firstItem="4YM-7j-CaT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-24" id="f3P-bY-7Rw"/>
                             <constraint firstItem="ZcO-qX-0rM" firstAttribute="leading" secondItem="4YM-7j-CaT" secondAttribute="leading" id="hyf-52-6Zo"/>
                             <constraint firstItem="nV7-Ak-Ih5" firstAttribute="trailing" secondItem="4YM-7j-CaT" secondAttribute="trailing" id="mnE-C0-HkT"/>
                             <constraint firstItem="ziq-Tt-8m3" firstAttribute="trailing" secondItem="nV7-Ak-Ih5" secondAttribute="trailing" id="qP2-Nd-MmT"/>
                             <constraint firstItem="wF1-tI-xd7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rEg-p8-4vZ"/>
+                            <constraint firstItem="vGS-zX-Rui" firstAttribute="centerY" secondItem="wF1-tI-xd7" secondAttribute="centerY" id="rPh-fR-oIq"/>
                             <constraint firstItem="Nc1-g7-PsQ" firstAttribute="trailing" secondItem="ziq-Tt-8m3" secondAttribute="trailing" id="v2t-By-jpJ"/>
                             <constraint firstItem="ZcO-qX-0rM" firstAttribute="trailing" secondItem="4YM-7j-CaT" secondAttribute="trailing" id="yit-9n-hsq"/>
                         </constraints>
