@@ -1,11 +1,12 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
     let repository = ProductRepository()
     var products: [Product] = []
     var currentIndex = 0
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var productIDLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         repository.seedProductsIfNeeded()
         products = repository.fetchAllProducts()
 
@@ -52,5 +54,29 @@ class ViewController: UIViewController {
             currentIndex -= 1
             displayProduct(products[currentIndex])
         }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text, !searchText.isEmpty else {
+            return
+        }
+
+        let results = repository.searchProducts(byName: searchText)
+
+        if let firstMatch = results.first {
+            products = results
+            currentIndex = 0
+            displayProduct(firstMatch)
+        } else {
+            let alert = UIAlertController(
+                title: "No Results",
+                message: "No product found with that name.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
+
+        searchBar.resignFirstResponder()
     }
 }

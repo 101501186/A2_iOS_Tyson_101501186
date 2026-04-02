@@ -26,6 +26,19 @@ class ProductRepository {
         return fetchAllProducts().first
     }
 
+    func searchProducts(byName searchText: String) -> [Product] {
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "productID", ascending: true)]
+        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchText)
+
+        do {
+            return try context.fetch(request)
+        } catch {
+            print("Failed to search products: \(error)")
+            return []
+        }
+    }
+
     func addProduct(productID: Int64, name: String, productDescription: String, price: Double, provider: String) {
         let product = Product(context: context)
         product.productID = productID
