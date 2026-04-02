@@ -4,6 +4,7 @@ class ViewController: UIViewController {
 
     let repository = ProductRepository()
     var products: [Product] = []
+    var currentIndex = 0
 
     @IBOutlet weak var productIDLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,5 +29,11 @@ class ViewController: UIViewController {
         priceLabel.text = String(format: "Price: $%.2f", product.price)
         providerLabel.text = "Provider: \(product.provider ?? "")"
     }
-}
 
+    @IBAction func nextProductTapped(_ sender: UIButton) {
+        if currentIndex < products.count - 1 {
+            currentIndex += 1
+            displayProduct(products[currentIndex])
+        }
+    }
+}
