@@ -39,10 +39,14 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
         content.textProperties.font = UIFont.boldSystemFont(ofSize: 18)
         content.secondaryTextProperties.color = UIColor.darkGray
         content.secondaryTextProperties.numberOfLines = 2
+        content.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 18, bottom: 16, trailing: 18)
         cell.contentConfiguration = content
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 16
-        cell.layer.masksToBounds = true
+        var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
+        backgroundConfig.backgroundColor = .white
+        backgroundConfig.cornerRadius = 18
+        backgroundConfig.strokeColor = UIColor(red: 191 / 255, green: 204 / 255, blue: 190 / 255, alpha: 1.0)
+        backgroundConfig.strokeWidth = 1
+        cell.backgroundConfiguration = backgroundConfig
         cell.selectionStyle = .default
         return cell
     }
@@ -61,7 +65,7 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
         view.backgroundColor = UIColor(red: 219 / 255, green: 228 / 255, blue: 216 / 255, alpha: 1.0)
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
-        tableView.rowHeight = 92
+        tableView.rowHeight = 108
         doneButton.backgroundColor = UIColor(red: 32 / 255, green: 86 / 255, blue: 154 / 255, alpha: 1.0)
         doneButton.setTitleColor(.white, for: .normal)
         doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -92,5 +96,15 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
             return "camera"
         }
         return "shippingbox.fill"
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        12
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let spacer = UIView()
+        spacer.backgroundColor = .clear
+        return spacer
     }
 }

@@ -32,12 +32,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
         searchBar.placeholder = "Search by name or description"
 
         [productIDLabel, nameLabel, descriptionLabel, priceLabel, providerLabel].forEach {
-            $0?.backgroundColor = .white
+            $0?.backgroundColor = UIColor(red: 247 / 255, green: 250 / 255, blue: 253 / 255, alpha: 1.0)
             $0?.textColor = UIColor(red: 33 / 255, green: 52 / 255, blue: 77 / 255, alpha: 1.0)
-            $0?.layer.cornerRadius = 14
+            $0?.layer.cornerRadius = 12
             $0?.layer.masksToBounds = true
-            $0?.layer.borderColor = UIColor(red: 179 / 255, green: 199 / 255, blue: 224 / 255, alpha: 1.0).cgColor
+            $0?.layer.borderColor = UIColor(red: 188 / 255, green: 205 / 255, blue: 226 / 255, alpha: 1.0).cgColor
             $0?.layer.borderWidth = 1
+            $0?.numberOfLines = 0
         }
 
         [previousButton, nextButton, addProductButton, viewAllButton].forEach {
@@ -58,12 +59,40 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
 
     func displayProduct(_ product: Product) {
-        productIDLabel.text = "Product ID: \(product.productID)"
-        nameLabel.text = "Name: \(product.name ?? "")"
-        descriptionLabel.text = "Description: \(product.productDescription ?? "")"
-        priceLabel.text = String(format: "Price: $%.2f", product.price)
-        providerLabel.text = "Provider: \(product.provider ?? "")"
+        applyCardText(to: productIDLabel, title: "Product ID", value: "\(product.productID)")
+        applyCardText(to: nameLabel, title: "Name", value: product.name ?? "")
+        applyCardText(to: descriptionLabel, title: "Description", value: product.productDescription ?? "", multiline: true)
+        applyCardText(to: priceLabel, title: "Price", value: String(format: "$%.2f", product.price))
+        applyCardText(to: providerLabel, title: "Provider", value: product.provider ?? "")
         updateNavigationButtons()
+    }
+
+    func applyCardText(to label: UILabel, title: String, value: String, multiline: Bool = false) {
+        let titleAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 14, weight: .semibold),
+            .foregroundColor: UIColor(red: 78 / 255, green: 102 / 255, blue: 132 / 255, alpha: 1.0)
+        ]
+
+        let valueAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: multiline ? 17 : 18, weight: .medium),
+            .foregroundColor: UIColor(red: 27 / 255, green: 44 / 255, blue: 66 / 255, alpha: 1.0)
+        ]
+
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 3
+        paragraph.paragraphSpacing = 6
+
+        let text = NSMutableAttributedString(
+            string: "  \(title)\n",
+            attributes: titleAttributes.merging([.paragraphStyle: paragraph]) { _, new in new }
+        )
+        text.append(
+            NSAttributedString(
+                string: "  \(value)  ",
+                attributes: valueAttributes.merging([.paragraphStyle: paragraph]) { _, new in new }
+            )
+        )
+        label.attributedText = text
     }
 
     func updateNavigationButtons() {
