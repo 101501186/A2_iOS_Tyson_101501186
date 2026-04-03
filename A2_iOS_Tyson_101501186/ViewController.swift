@@ -44,18 +44,38 @@ class ViewController: UIViewController, UISearchBarDelegate {
         [previousButton, nextButton, addProductButton, viewAllButton].forEach {
             styleButton($0)
         }
+
+        styleSecondaryButton(addProductButton)
+        styleSecondaryButton(viewAllButton)
     }
 
     func styleButton(_ button: UIButton?) {
-        button?.backgroundColor = UIColor(red: 32 / 255, green: 86 / 255, blue: 154 / 255, alpha: 1.0)
+        button?.configuration = nil
+        button?.backgroundColor = UIColor(red: 29 / 255, green: 78 / 255, blue: 137 / 255, alpha: 1.0)
         button?.setTitleColor(.white, for: .normal)
-        button?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        button?.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        button?.titleLabel?.numberOfLines = 1
+        button?.titleLabel?.adjustsFontSizeToFitWidth = true
+        button?.titleLabel?.minimumScaleFactor = 0.8
         button?.layer.cornerRadius = 14
-        button?.contentEdgeInsets = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
-        button?.layer.shadowColor = UIColor.black.withAlphaComponent(0.15).cgColor
+        button?.layer.masksToBounds = false
+        button?.contentEdgeInsets = UIEdgeInsets(top: 11, left: 14, bottom: 11, right: 14)
+        button?.layer.borderWidth = 0
+        button?.layer.shadowColor = UIColor(red: 17 / 255, green: 41 / 255, blue: 74 / 255, alpha: 0.22).cgColor
         button?.layer.shadowOpacity = 1
-        button?.layer.shadowOffset = CGSize(width: 0, height: 4)
-        button?.layer.shadowRadius = 8
+        button?.layer.shadowOffset = CGSize(width: 0, height: 6)
+        button?.layer.shadowRadius = 12
+    }
+
+    func styleSecondaryButton(_ button: UIButton?) {
+        button?.backgroundColor = UIColor(red: 244 / 255, green: 248 / 255, blue: 252 / 255, alpha: 1.0)
+        button?.setTitleColor(UIColor(red: 29 / 255, green: 78 / 255, blue: 137 / 255, alpha: 1.0), for: .normal)
+        button?.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        button?.titleLabel?.adjustsFontSizeToFitWidth = true
+        button?.titleLabel?.minimumScaleFactor = 0.8
+        button?.layer.borderWidth = 1
+        button?.layer.borderColor = UIColor(red: 162 / 255, green: 187 / 255, blue: 217 / 255, alpha: 1.0).cgColor
+        button?.layer.shadowColor = UIColor(red: 17 / 255, green: 41 / 255, blue: 74 / 255, alpha: 0.10).cgColor
     }
 
     func displayProduct(_ product: Product) {

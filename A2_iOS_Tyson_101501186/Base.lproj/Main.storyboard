@@ -57,29 +57,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF1-tI-xd7">
-                                <rect key="frame" x="282" y="685" width="83" height="34"/>
-                                <state key="normal" title="Next"/>
+                                <rect key="frame" x="210" y="737" width="155" height="37"/>
+                                <state key="normal" title="View Next Product"/>
                                 <connections>
                                     <action selector="nextProductTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3YR-LB-PRi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGS-zX-Rui">
-                                <rect key="frame" x="28" y="685" width="111" height="34"/>
-                                <state key="normal" title="Previous"/>
+                                <rect key="frame" x="28" y="737" width="155" height="37"/>
+                                <state key="normal" title="View Previous Product"/>
                                 <connections>
                                     <action selector="previousProductTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc0-DI-Bz0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pi-D4-1Jv">
-                                <rect key="frame" x="28" y="731" width="111" height="34"/>
-                                <state key="normal" title="Add Item"/>
+                                <rect key="frame" x="121" y="685" width="151" height="37"/>
+                                <state key="normal" title="Add New Product"/>
                                 <connections>
                                     <segue destination="s2x-aB-2VD" kind="presentation" identifier="ShowAddProduct" id="Y6e-qf-Ub1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfV-AT-vQq">
-                                <rect key="frame" x="267" y="731" width="98" height="34"/>
-                                <state key="normal" title="Catalog"/>
+                                <rect key="frame" x="121" y="786" width="151" height="37"/>
+                                <state key="normal" title="View All Products"/>
                                 <connections>
                                     <segue destination="IrF-Mx-HdM" kind="presentation" identifier="ShowProductList" id="pRa-Go-Ihp"/>
                                 </connections>
@@ -101,21 +101,21 @@
                             <constraint firstItem="ziq-Tt-8m3" firstAttribute="top" secondItem="nV7-Ak-Ih5" secondAttribute="bottom" constant="16" id="Sg1-TH-Dm7"/>
                             <constraint firstItem="nV7-Ak-Ih5" firstAttribute="top" secondItem="ZcO-qX-0rM" secondAttribute="bottom" constant="16" id="X0D-W7-E2c"/>
                             <constraint firstItem="ziq-Tt-8m3" firstAttribute="leading" secondItem="nV7-Ak-Ih5" secondAttribute="leading" id="bO3-2d-hHA"/>
-                            <constraint firstItem="wF1-tI-xd7" firstAttribute="top" secondItem="Nc1-g7-PsQ" secondAttribute="bottom" constant="32" id="bP3-tJ-ZKo"/>
+                            <constraint firstItem="6pi-D4-1Jv" firstAttribute="top" secondItem="Nc1-g7-PsQ" secondAttribute="bottom" constant="32" id="bP3-tJ-ZKo"/>
                             <constraint firstItem="vGS-zX-Rui" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="e0n-CQ-rdc"/>
                             <constraint firstItem="4YM-7j-CaT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-24" id="f3P-bY-7Rw"/>
                             <constraint firstItem="ZcO-qX-0rM" firstAttribute="leading" secondItem="4YM-7j-CaT" secondAttribute="leading" id="hyf-52-6Zo"/>
                             <constraint firstItem="nV7-Ak-Ih5" firstAttribute="trailing" secondItem="4YM-7j-CaT" secondAttribute="trailing" id="mnE-C0-HkT"/>
                             <constraint firstItem="M4u-8b-2oJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="odY-Oz-Mga"/>
                             <constraint firstItem="ziq-Tt-8m3" firstAttribute="trailing" secondItem="nV7-Ak-Ih5" secondAttribute="trailing" id="qP2-Nd-MmT"/>
-                            <constraint firstItem="wF1-tI-xd7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-28" id="rEg-p8-4vZ"/>
-                            <constraint firstItem="vGS-zX-Rui" firstAttribute="centerY" secondItem="wF1-tI-xd7" secondAttribute="centerY" id="rPh-fR-oIq"/>
-                            <constraint firstItem="6pi-D4-1Jv" firstAttribute="top" secondItem="wF1-tI-xd7" secondAttribute="bottom" constant="12" id="sGB-dC-5Ii"/>
-                            <constraint firstItem="hfV-AT-vQq" firstAttribute="top" secondItem="wF1-tI-xd7" secondAttribute="bottom" constant="12" id="tNc-LP-I4F"/>
+                            <constraint firstItem="6pi-D4-1Jv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rEg-p8-4vZ"/>
+                            <constraint firstItem="vGS-zX-Rui" firstAttribute="top" secondItem="6pi-D4-1Jv" secondAttribute="bottom" constant="15" id="rPh-fR-oIq"/>
+                            <constraint firstItem="hfV-AT-vQq" firstAttribute="top" secondItem="wF1-tI-xd7" secondAttribute="bottom" constant="12" id="sGB-dC-5Ii"/>
+                            <constraint firstItem="wF1-tI-xd7" firstAttribute="top" secondItem="6pi-D4-1Jv" secondAttribute="bottom" constant="15" id="tNc-LP-I4F"/>
                             <constraint firstItem="Nc1-g7-PsQ" firstAttribute="trailing" secondItem="ziq-Tt-8m3" secondAttribute="trailing" id="v2t-By-jpJ"/>
-                            <constraint firstItem="6pi-D4-1Jv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="v3M-NB-V7V"/>
+                            <constraint firstItem="hfV-AT-vQq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v3M-NB-V7V"/>
                             <constraint firstItem="ZcO-qX-0rM" firstAttribute="trailing" secondItem="4YM-7j-CaT" secondAttribute="trailing" id="yit-9n-hsq"/>
-                            <constraint firstItem="hfV-AT-vQq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-28" id="zNO-OQ-32W"/>
+                            <constraint firstItem="wF1-tI-xd7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-28" id="zNO-OQ-32W"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IxV-GC-8Jg"/>
