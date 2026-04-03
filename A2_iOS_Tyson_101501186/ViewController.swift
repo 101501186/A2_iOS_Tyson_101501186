@@ -88,28 +88,37 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
 
     func applyCardText(to label: UILabel, title: String, value: String, multiline: Bool = false) {
+        let titleParagraph = NSMutableParagraphStyle()
+        titleParagraph.lineSpacing = 3
+        titleParagraph.paragraphSpacing = 6
+        titleParagraph.firstLineHeadIndent = 12
+        titleParagraph.headIndent = 12
+
+        let valueParagraph = NSMutableParagraphStyle()
+        valueParagraph.lineSpacing = 3
+        valueParagraph.firstLineHeadIndent = 12
+        valueParagraph.headIndent = 12
+
         let titleAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 14, weight: .semibold),
-            .foregroundColor: UIColor(red: 78 / 255, green: 102 / 255, blue: 132 / 255, alpha: 1.0)
+            .foregroundColor: UIColor(red: 78 / 255, green: 102 / 255, blue: 132 / 255, alpha: 1.0),
+            .paragraphStyle: titleParagraph
         ]
 
         let valueAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: multiline ? 17 : 18, weight: .medium),
-            .foregroundColor: UIColor(red: 27 / 255, green: 44 / 255, blue: 66 / 255, alpha: 1.0)
+            .foregroundColor: UIColor(red: 27 / 255, green: 44 / 255, blue: 66 / 255, alpha: 1.0),
+            .paragraphStyle: valueParagraph
         ]
 
-        let paragraph = NSMutableParagraphStyle()
-        paragraph.lineSpacing = 3
-        paragraph.paragraphSpacing = 6
-
         let text = NSMutableAttributedString(
-            string: "  \(title)\n",
-            attributes: titleAttributes.merging([.paragraphStyle: paragraph]) { _, new in new }
+            string: "\(title)\n",
+            attributes: titleAttributes
         )
         text.append(
             NSAttributedString(
-                string: "  \(value)  ",
-                attributes: valueAttributes.merging([.paragraphStyle: paragraph]) { _, new in new }
+                string: value,
+                attributes: valueAttributes
             )
         )
         label.attributedText = text

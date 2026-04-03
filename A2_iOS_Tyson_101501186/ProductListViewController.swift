@@ -62,7 +62,7 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func styleScreen() {
-        view.backgroundColor = UIColor(red: 219 / 255, green: 228 / 255, blue: 216 / 255, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 232 / 255, green: 224 / 255, blue: 210 / 255, alpha: 1.0)
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.rowHeight = 108
