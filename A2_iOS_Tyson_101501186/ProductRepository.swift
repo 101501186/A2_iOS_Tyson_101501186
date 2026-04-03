@@ -75,73 +75,73 @@ class ProductRepository {
 
         addProduct(
             productID: 1,
-            name: "iPhone 15",
-            productDescription: "Apple smartphone with 128GB storage",
-            price: 999.99,
-            provider: "Apple"
+            name: "Ceramic Coffee Mug",
+            productDescription: "Simple 12-ounce mug for hot drinks",
+            price: 9.99,
+            provider: "Home Basics"
         )
         addProduct(
             productID: 2,
-            name: "Galaxy S24",
-            productDescription: "Samsung smartphone with AMOLED display",
-            price: 949.99,
-            provider: "Samsung"
+            name: "Notebook Set",
+            productDescription: "Pack of three ruled notebooks for school or work",
+            price: 7.49,
+            provider: "Paper House"
         )
         addProduct(
             productID: 3,
-            name: "iPad Air",
-            productDescription: "Apple tablet for school and entertainment",
-            price: 799.99,
-            provider: "Apple"
+            name: "Desk Lamp",
+            productDescription: "Small LED desk lamp with adjustable neck",
+            price: 24.99,
+            provider: "Bright Living"
         )
         addProduct(
             productID: 4,
-            name: "MacBook Air",
-            productDescription: "Lightweight laptop with M-series chip",
-            price: 1399.99,
-            provider: "Apple"
+            name: "Water Bottle",
+            productDescription: "Reusable stainless steel bottle for everyday use",
+            price: 18.99,
+            provider: "PureSip"
         )
         addProduct(
             productID: 5,
-            name: "Surface Laptop",
-            productDescription: "Microsoft laptop for productivity tasks",
-            price: 1299.99,
-            provider: "Microsoft"
+            name: "Throw Pillow",
+            productDescription: "Soft decorative pillow for sofa or bed",
+            price: 15.99,
+            provider: "Cozy Home"
         )
         addProduct(
             productID: 6,
-            name: "AirPods Pro",
-            productDescription: "Wireless earbuds with noise cancellation",
-            price: 329.99,
-            provider: "Apple"
+            name: "Kitchen Towels",
+            productDescription: "Set of four cotton towels for kitchen cleanup",
+            price: 11.99,
+            provider: "CleanNest"
         )
         addProduct(
             productID: 7,
-            name: "Sony WH-1000XM5",
-            productDescription: "Over-ear headphones with premium sound",
-            price: 499.99,
-            provider: "Sony"
+            name: "Laundry Basket",
+            productDescription: "Lightweight plastic basket with side handles",
+            price: 13.49,
+            provider: "EasyCarry"
         )
         addProduct(
             productID: 8,
-            name: "Apple Watch",
-            productDescription: "Smartwatch for health and notifications",
-            price: 559.99,
-            provider: "Apple"
+            name: "Cutting Board",
+            productDescription: "Medium bamboo cutting board for meal prep",
+            price: 16.75,
+            provider: "Kitchen Grove"
         )
         addProduct(
             productID: 9,
-            name: "Kindle Paperwhite",
-            productDescription: "E-reader with glare-free display",
-            price: 219.99,
-            provider: "Amazon"
+            name: "Hand Soap",
+            productDescription: "Liquid hand soap with fresh citrus scent",
+            price: 4.99,
+            provider: "Fresh Day"
         )
         addProduct(
             productID: 10,
-            name: "GoPro Hero",
-            productDescription: "Action camera for outdoor recording",
-            price: 449.99,
-            provider: "GoPro"
+            name: "Yoga Mat",
+            productDescription: "Non-slip exercise mat for stretching and workouts",
+            price: 22.99,
+            provider: "FlexFit"
         )
     }
 
