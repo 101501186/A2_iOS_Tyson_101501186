@@ -155,30 +155,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAj-tV-y8a">
-                                <rect key="frame" x="189" y="218" width="180" height="34"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Product Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XAj-tV-y8a">
+                                <rect key="frame" x="24" y="218" width="345" height="116"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9L-RR-s6Y">
-                                <rect key="frame" x="189" y="272" width="180" height="34"/>
+                                <rect key="frame" x="24" y="350" width="345" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Provider" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPd-LH-TJk">
-                                <rect key="frame" x="189" y="326" width="180" height="34"/>
+                                <rect key="frame" x="24" y="404" width="345" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-S7-7UM">
-                                <rect key="frame" x="63" y="400" width="48" height="30"/>
+                                <rect key="frame" x="63" y="482" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelTapped:" destination="s2x-aB-2VD" eventType="touchUpInside" id="B30-uL-kjN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUs-74-0ME">
-                                <rect key="frame" x="296" y="400" width="34" height="30"/>
+                                <rect key="frame" x="296" y="482" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveTapped:" destination="s2x-aB-2VD" eventType="touchUpInside" id="b2l-Xd-U1q"/>
@@ -189,14 +190,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="My9-Ue-aYh" firstAttribute="top" secondItem="ElM-pw-Jsh" secondAttribute="top" constant="44" id="1vG-f9-YVm"/>
-                            <constraint firstItem="x9L-RR-s6Y" firstAttribute="top" secondItem="XAj-tV-y8a" secondAttribute="bottom" constant="20" id="6mH-Bf-cY1"/>
-                            <constraint firstItem="fPd-LH-TJk" firstAttribute="top" secondItem="x9L-RR-s6Y" secondAttribute="bottom" constant="20" id="A5B-pq-Knn"/>
+                            <constraint firstItem="x9L-RR-s6Y" firstAttribute="top" secondItem="XAj-tV-y8a" secondAttribute="bottom" constant="16" id="6mH-Bf-cY1"/>
+                            <constraint firstItem="fPd-LH-TJk" firstAttribute="top" secondItem="x9L-RR-s6Y" secondAttribute="bottom" constant="16" id="A5B-pq-Knn"/>
                             <constraint firstItem="nUs-74-0ME" firstAttribute="top" secondItem="fPd-LH-TJk" secondAttribute="bottom" constant="40" id="Ad2-mr-igd"/>
                             <constraint firstItem="K2u-S7-7UM" firstAttribute="centerY" secondItem="nUs-74-0ME" secondAttribute="centerY" id="CUX-cv-5c6"/>
                             <constraint firstItem="My9-Ue-aYh" firstAttribute="centerX" secondItem="l9f-16-Fh2" secondAttribute="centerX" id="FpP-8k-oA2"/>
                             <constraint firstItem="v3e-KG-J0y" firstAttribute="leading" secondItem="ElM-pw-Jsh" secondAttribute="leading" constant="24" id="LTv-YY-pVv"/>
+                            <constraint firstItem="XAj-tV-y8a" firstAttribute="leading" secondItem="ElM-pw-Jsh" secondAttribute="leading" constant="24" id="M2f-kH-r8S"/>
                             <constraint firstItem="XAj-tV-y8a" firstAttribute="trailing" secondItem="v3e-KG-J0y" secondAttribute="trailing" id="Op0-B5-shR"/>
                             <constraint firstItem="XAj-tV-y8a" firstAttribute="top" secondItem="v3e-KG-J0y" secondAttribute="bottom" constant="20" id="Q8Q-Xi-dT0"/>
+                            <constraint firstItem="XAj-tV-y8a" firstAttribute="height" constant="116" id="Qk9-bT-S2u"/>
                             <constraint firstItem="v3e-KG-J0y" firstAttribute="top" secondItem="My9-Ue-aYh" secondAttribute="bottom" constant="32" id="QiA-3H-a6q"/>
                             <constraint firstItem="fPd-LH-TJk" firstAttribute="leading" secondItem="x9L-RR-s6Y" secondAttribute="leading" id="T29-t6-0eu"/>
                             <constraint firstItem="x9L-RR-s6Y" firstAttribute="leading" secondItem="XAj-tV-y8a" secondAttribute="leading" id="V3d-9W-IOP"/>
@@ -210,7 +213,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="K2u-S7-7UM" id="5Ch-jS-I4n"/>
-                        <outlet property="descriptionTextField" destination="XAj-tV-y8a" id="fOl-H4-qhK"/>
+                        <outlet property="descriptionTextView" destination="XAj-tV-y8a" id="fOl-H4-qhK"/>
                         <outlet property="nameTextField" destination="v3e-KG-J0y" id="wLj-Rx-KL0"/>
                         <outlet property="priceTextField" destination="x9L-RR-s6Y" id="x6I-3P-gPe"/>
                         <outlet property="providerTextField" destination="fPd-LH-TJk" id="2Tl-2x-fVa"/>

@@ -1,12 +1,12 @@
 import UIKit
 
-class AddProductViewController: UIViewController {
+class AddProductViewController: UIViewController, UITextViewDelegate {
 
     let repository = ProductRepository()
     var onProductSaved: (() -> Void)?
 
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var providerTextField: UITextField!
     @IBOutlet weak var cancelButton: UIButton!
@@ -20,12 +20,24 @@ class AddProductViewController: UIViewController {
     func styleScreen() {
         view.backgroundColor = UIColor(red: 232 / 255, green: 224 / 255, blue: 210 / 255, alpha: 1.0)
 
-        [nameTextField, descriptionTextField, priceTextField, providerTextField].forEach {
+        [nameTextField, priceTextField, providerTextField].forEach {
             $0?.backgroundColor = .white
             $0?.layer.cornerRadius = 14
             $0?.layer.masksToBounds = true
             $0?.borderStyle = .roundedRect
         }
+
+        descriptionTextView.backgroundColor = .white
+        descriptionTextView.layer.cornerRadius = 14
+        descriptionTextView.layer.masksToBounds = true
+        descriptionTextView.layer.borderWidth = 1
+        descriptionTextView.layer.borderColor = UIColor.systemGray3.cgColor
+        descriptionTextView.font = UIFont.systemFont(ofSize: 17)
+        descriptionTextView.textContainerInset = UIEdgeInsets(top: 12, left: 10, bottom: 12, right: 10)
+        descriptionTextView.textContainer.lineFragmentPadding = 0
+        descriptionTextView.text = "Product Description"
+        descriptionTextView.textColor = .placeholderText
+        descriptionTextView.delegate = self
 
         cancelButton.backgroundColor = UIColor(red: 148 / 255, green: 84 / 255, blue: 72 / 255, alpha: 1.0)
         saveButton.backgroundColor = UIColor(red: 51 / 255, green: 128 / 255, blue: 82 / 255, alpha: 1.0)
@@ -45,11 +57,12 @@ class AddProductViewController: UIViewController {
     @IBAction func saveTapped(_ sender: UIButton) {
         guard
             let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            let description = descriptionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            let description = descriptionTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             let priceText = priceTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             let provider = providerTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             !name.isEmpty,
             !description.isEmpty,
+            description != "Product Description",
             !priceText.isEmpty,
             !provider.isEmpty,
             let price = Double(priceText)
@@ -73,5 +86,19 @@ class AddProductViewController: UIViewController {
 
         onProductSaved?()
         dismiss(animated: true)
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Product Description" {
+            textView.text = ""
+            textView.textColor = .label
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            textView.text = "Product Description"
+            textView.textColor = .placeholderText
+        }
     }
 }
