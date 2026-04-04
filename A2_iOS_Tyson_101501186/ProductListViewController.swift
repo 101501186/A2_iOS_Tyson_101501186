@@ -75,25 +75,36 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
 
     func iconName(for product: Product) -> String {
         let nameText = (product.name ?? "").lowercased()
-        let providerText = (product.provider ?? "").lowercased()
 
-        if nameText.contains("iphone") || nameText.contains("galaxy") {
-            return "iphone"
+        if nameText.contains("mug") || nameText.contains("coffee") {
+            return "cup.and.saucer.fill"
         }
-        if nameText.contains("watch") {
-            return "applewatch"
+        if nameText.contains("notebook") {
+            return "book.closed.fill"
         }
-        if nameText.contains("airpods") || nameText.contains("headphone") || nameText.contains("sony") {
-            return "headphones"
+        if nameText.contains("lamp") {
+            return "lamp.desk.fill"
         }
-        if nameText.contains("ipad") || nameText.contains("kindle") {
-            return "ipad"
+        if nameText.contains("bottle") {
+            return "waterbottle.fill"
         }
-        if nameText.contains("macbook") || nameText.contains("laptop") || providerText.contains("microsoft") {
-            return "laptopcomputer"
+        if nameText.contains("pillow") {
+            return "bed.double.fill"
         }
-        if nameText.contains("gopro") || nameText.contains("camera") {
-            return "camera"
+        if nameText.contains("towel") {
+            return "hands.sparkles.fill"
+        }
+        if nameText.contains("basket") {
+            return "basket.fill"
+        }
+        if nameText.contains("cutting board") || nameText.contains("board") {
+            return "fork.knife"
+        }
+        if nameText.contains("soap") {
+            return "drop.fill"
+        }
+        if nameText.contains("yoga") || nameText.contains("mat") {
+            return "figure.yoga"
         }
         return "shippingbox.fill"
     }
