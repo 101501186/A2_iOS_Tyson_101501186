@@ -1,3 +1,6 @@
+// Tyson Ward-Dicks - 101501186
+// Lab Test 2 (Assignment) - COMP3097
+
 import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
@@ -188,9 +191,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         let results = repository.searchProducts(byName: searchText)
 
         if let firstMatch = results.first {
-            products = results
-            currentIndex = 0
-            displayProduct(firstMatch)
+            showProduct(firstMatch)
         } else {
             let alert = UIAlertController(
                 title: "No Results",

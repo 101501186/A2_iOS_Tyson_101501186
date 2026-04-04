@@ -1,3 +1,6 @@
+// Tyson Ward-Dicks - 101501186
+// Lab Test 2 (Assignment) - COMP3097
+
 import UIKit
 import CoreData
 
@@ -29,10 +32,12 @@ class ProductRepository {
     func searchProducts(byName searchText: String) -> [Product] {
         let request: NSFetchRequest<Product> = Product.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "productID", ascending: true)]
+        let escapedSearchText = NSRegularExpression.escapedPattern(for: searchText)
+        let wholeWordPattern = ".*\\b\(escapedSearchText)\\b.*"
         request.predicate = NSPredicate(
-            format: "name CONTAINS[cd] %@ OR productDescription CONTAINS[cd] %@",
-            searchText,
-            searchText
+            format: "name MATCHES[c] %@ OR productDescription MATCHES[c] %@",
+            wholeWordPattern,
+            wholeWordPattern
         )
 
         do {

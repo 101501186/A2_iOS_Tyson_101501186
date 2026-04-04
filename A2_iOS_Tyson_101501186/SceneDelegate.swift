@@ -1,9 +1,5 @@
-//
-//  SceneDelegate.swift
-//  A2_iOS_Tyson_101501186
-//
-//  Created by Tyson Ward-Dicks on 2026-03-31.
-//
+// Tyson Ward-Dicks - 101501186
+// Lab Test 2 (Assignment) - COMP3097
 
 import UIKit
 
